@@ -13,5 +13,11 @@ struct MultipleWindowsApp: App {
         WindowGroup {
             ContentView()
         }
+
+        #if os(macOS)
+        Window("Second View", id: "secondView") {
+            Text("Second View")
+        }
+        #endif
     }
 }

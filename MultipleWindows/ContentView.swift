@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.supportsMultipleWindows)
+    private var supportsMultipleWindows
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if supportsMultipleWindows {
+            Text("Supports multiple windows")
+        } else {
+            Text("Doesn't support multiple windows")
         }
-        .padding()
     }
 }
 
